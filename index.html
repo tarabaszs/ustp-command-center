@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="USTP Command Center PPD Sik" />
+  <title>USTP Command Center | PPD Sik</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="USTP Command Center">
+        <span class="brand-mark">U</span><span><b>USTP</b><small>COMMAND CENTER</small></span>
+      </a>
+      <div class="district">PPD SIK <span>•</span> KEDAH</div>
+      <nav aria-label="Navigasi utama">
+        <button class="nav-link active" data-view="overview"><span>⌂</span> Gambaran Keseluruhan</button>
+        <p class="nav-label">PROFILE GURU</p>
+        <button class="nav-link" data-view="teachers"><span>◉</span> Guru Admin DELIMa <em>33</em></button>
+        <button class="nav-link disabled" data-view="placeholder"><span>◇</span> Profil Guru PPD Sik</button>
+        <p class="nav-label">MODUL USTP</p>
+        <button class="nav-link disabled" data-view="placeholder"><span>▦</span> Status Infrastruktur</button>
+        <button class="nav-link disabled" data-view="placeholder"><span>◌</span> Pembelajaran Digital</button>
+        <button class="nav-link disabled" data-view="placeholder"><span>◫</span> Analitik &amp; Laporan</button>
+      </nav>
+      <div class="sidebar-footer"><span class="dot"></span> Sumber data setempat<br><small>Kemas kini melalui import kemudian</small></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton" aria-label="Buka navigasi">☰</button>
+        <div class="crumb" id="breadcrumb">Pusat Kawalan <span>/</span> Gambaran Keseluruhan</div>
+        <div class="topbar-right"><span class="privacy-pill">⌁ Privasi dilindungi</span><div class="user-avatar">PS</div></div>
+      </header>
+
+      <section class="view active" id="overview">
+        <div class="hero">
+          <div><p class="eyebrow">USTP COMMAND CENTER</p><h1>Pusat kawalan pendidikan digital.</h1><p class="hero-copy">Pandangan awal operasi USTP untuk PPD Sik. Mulakan dengan pangkalan Guru Admin DELIMa dan tambah modul lain apabila data tersedia.</p></div>
+          <div class="date-card"><span>DATA SEMASA</span><strong>2026</strong><small>ADMIN DELIMA SEK</small></div>
+        </div>
+        <div class="metrics" id="metrics"></div>
+        <div class="overview-grid">
+          <article class="panel roster-panel"><div class="panel-header"><div><p class="eyebrow">PROFILE GURU</p><h2>Guru Admin DELIMa</h2></div><button class="text-button" data-goto="teachers">Lihat semua →</button></div><p class="panel-copy">Satu rekod pengurusan untuk setiap sekolah dalam sumber data semasa.</p><div class="mini-list" id="recentTeachers"></div></article>
+          <article class="panel readiness-panel"><div class="panel-header"><div><p class="eyebrow">KESIAPSIAGAAN DATA</p><h2>Modul akan datang</h2></div></div><div class="readiness-row"><span class="icon-block">▦</span><div><b>Infrastruktur</b><small>Menunggu sumber data</small></div><span class="status">Belum diisi</span></div><div class="readiness-row"><span class="icon-block">◌</span><div><b>Pembelajaran Digital</b><small>Menunggu sumber data</small></div><span class="status">Belum diisi</span></div><div class="readiness-row"><span class="icon-block">◫</span><div><b>Analitik &amp; Laporan</b><small>Menunggu sumber data</small></div><span class="status">Belum diisi</span></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="teachers">
+        <div class="page-heading"><div><p class="eyebrow">PROFILE GURU</p><h1>Guru Admin DELIMa</h1><p>Direktori operasi daripada rekod <b>ADMIN DELIMA SEK</b>. GPICT dan Guru Media tidak termasuk.</p></div><div class="record-count" id="recordCount"></div></div>
+        <div class="filter-bar"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari nama guru, sekolah atau kod sekolah..." /></label><label class="select-label">Gred<select id="gradeFilter"><option value="">Semua gred</option></select></label><button class="clear-button" id="clearFilters">Set semula</button></div>
+        <div class="teacher-layout"><section class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>GURU ADMIN DELIMA</th><th>SEKOLAH</th><th>GRED</th><th>PENGALAMAN</th><th></th></tr></thead><tbody id="teacherRows"></tbody></table></div><div class="table-footer" id="tableFooter"></div></section><aside class="profile-panel" id="profilePanel"><div class="empty-profile"><div>◉</div><h3>Pilih profil guru</h3><p>Klik mana-mana rekod untuk melihat butiran operasi.</p></div></aside></div>
+      </section>
+
+      <section class="view placeholder-view" id="placeholder"><div class="placeholder-icon">◇</div><p class="eyebrow">MODUL MASA HADAPAN</p><h1>Ruang ini sedia untuk data baharu.</h1><p>Struktur navigasi telah disediakan. Tambah sumber data yang disahkan untuk mengaktifkan modul ini.</p><button class="primary-button" data-goto="overview">Kembali ke pusat kawalan</button></section>
+    </main>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="app.js"></script>
+</body>
+</html>
